@@ -1,0 +1,43 @@
+{
+  "tools": [
+    {
+      "name": "search-vectorstore",
+      "description": "Semantic search over the indexed corpus.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string" },
+          "top_k": { "type": "integer" },
+          "filter": {
+            "type": "object",
+            "properties": {
+              "namespace": { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["namespace"]
+          }
+        },
+        "required": ["query"]
+      }
+    },
+    {
+      "name": "summarize",
+      "description": "Bullet summary of an arbitrary text.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string" },
+          "max_bullets": { "type": "integer" }
+        },
+        "required": ["text"]
+      }
+    },
+    {
+      "name": "ping",
+      "inputSchema": { "type": "object", "properties": {} }
+    },
+    {
+      "name": "version"
+    }
+  ]
+}
