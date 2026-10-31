@@ -35,6 +35,8 @@ npm run build
 node dist/cli.js fixtures/tools-list.json --format summary
 ```
 
+The locked source-build toolchain currently has unresolved npm audit findings. Run `npm ci` in an isolated checkout; do not use this repository as a production dependency while it is unmaintained.
+
 Replace the fixture path with your own `tools/list` JSON file. The CLI also accepts `--format json` or `--format markdown`, and `--out` to write a file.
 
 Input is an MCP `tools/list` result — the exact shape [`mcp-tools-snapshot`](https://github.com/mizcausevic-dev/mcp-tools-snapshot) captures.
